@@ -9,14 +9,16 @@
     width: 100%;
     height: 100vh;
     display: flex;
-    background-image:url(../img/importancia-comida-sana-vida-saludable.webp);
+    background-image: url(../img/importancia-comida-sana-vida-saludable.webp);
     background-repeat: no-repeat;
     background-size: cover;
+    background-attachment: fixed;
     justify-content: center;
     align-items: center;
     flex-direction: column;
     color: white;
     overflow: hidden;
+    text-align: center; /* Asegura centrado del texto */
 }
 
 /* Capa desenfocada encima del fondo */
@@ -27,8 +29,8 @@
     left: 0;
     width: 100%;
     height: 100%;
-    backdrop-filter: blur(6px); /* <- Aquí está el desenfoque */
-    background-color: rgba(0, 0, 0, 0.3); /* Opcional: oscurece el fondo */
+    backdrop-filter: blur(6px);
+    background-color: rgba(0, 0, 0, 0.3);
     z-index: 0;
 }
 
@@ -38,26 +40,54 @@
     z-index: 1;
 }
 
-
 .container h1 {
     color: #FFFFFF;
     text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.8);
-
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     font-size: 120px;
     font-style: italic;
+    max-width: 90%;
+    margin: 0 auto;
 }
 
 .container p {
     width: 50%;
     text-align: center;
-    margin: 10px 0px;
+    margin: 20px 0px;
     font-size: xx-large;
     color: #E0FFFF; 
     text-shadow: 1px 1px 4px rgba(0,0,0,0.6);
 }
 
-#botonInFO {
+header {
+    background-color: #00B7CC;
+    width: 100%;
+    height: 70px;
+    display: flex;
+    align-items: center;
+    position: fixed;
+    z-index: 1000;
+}
+
+nav {
+    width: 100%;
+    height: auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+nav svg {
+    margin-left: 50px;
+    margin-right: 50px;
+}
+
+nav img {
+    width: 140px;
+    height: 140px;
+}
+
+#botonInfo { /* Nombre unificado */
     background-color: #00B7CC;
     color: #FFFFFF;
     border: none;
@@ -70,19 +100,69 @@
     transition: background-color 0.3s ease;
 }
 
-#botonInFO:hover {
+#botonInfo:hover {
     background-color: #0099B0;
 }
 
+
+#botonInfo:active {
+    background-color: #007A8C;
+}
+
+article{
+    margin: 20px 0px;
+}
+
+.infoSection {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+}
+
+.infoText{
+    text-align: center;
+    width: 50%;
+    margin-top: 10px;
+    font-size: large;
+}
+.infoSection img {
+    width: 100%;
+    max-width: 600px;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    margin-top: 10px;
+}
+h2{
+    text-align: center;
+    font-size: 2.5em;
+    margin: 20px 0;
+    color: #333;
+    font-family: 'Arial', sans-serif;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.2);
+    font-weight: bold;
+}
+
+
+
+
+
+
+
+
 @media (max-width: 768px) {
     .container {
-        background-position: center center; /* Solo en pantallas pequeñas */
+        background-position: center center;
+        text-align: center; /* Centrado total en pantallas medianas */
     }
 
     .container h1 {
         font-size: 60px;
-        text-align: center;
         padding: 0 10px;
+        max-width: 90%;
+        margin: 0 auto;
     }
 
     .container p {
